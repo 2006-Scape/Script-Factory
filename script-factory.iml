@@ -20,7 +20,10 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.parabot:client:2.7.7" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.parabot.servers:317-api-battlescape:0.3.6" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.parabot:client:2.8.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.ow2.asm:asm-all:5.0.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.parabot:internal-api:1.53.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.parabot:317-api-minified" level="project" />
   </component>
 </module>

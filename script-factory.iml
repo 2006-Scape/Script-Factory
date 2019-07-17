@@ -24,6 +24,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.ow2.asm:asm-all:5.0.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.parabot:internal-api:1.53.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.parabot:317-api-minified" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.parabot:317-api-minified:1.21.5" level="project" />
   </component>
 </module>

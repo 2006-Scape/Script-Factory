@@ -127,6 +127,11 @@
                     <execution>
                         <phase>package</phase>
                         <configuration>
+                            <target>
+                                <ant antfile="${basedir}/src/main/resources/build.xml">
+                                    <target name="allatori"/>
+                                </ant>
+                            </target>
                         </configuration>
                         <goals>
                             <goal>run</goal>

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.before.script.factory</groupId>
+    <groupId>org.parabot.scripts</groupId>
     <artifactId>script-factory</artifactId>
     <version>1.5</version>
     <name>Script Factory</name>

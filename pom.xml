@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.parabot.scripts</groupId>
+    <groupId>src</groupId>
     <artifactId>script-factory</artifactId>
     <version>1.5</version>
-    <name>Script Factory</name>
 
     <properties>
-        <script.id>1000197</script.id>
-        <jdk.version>1.8</jdk.version>
-        <buildType.id>SCRIPT_${script.id}</buildType.id>
+        <jdk.version>1.7</jdk.version>
     </properties>
 
     <repositories>
         <repository>
             <id>parabot-maven</id>
             <name>Parabot its Maven Repository</name>
-            <url>https://maven.parabot.org/</url>
+            <url>http://maven.parabot.org/</url>
         </repository>
     </repositories>
 
@@ -27,19 +22,17 @@
         <dependency>
             <groupId>org.parabot</groupId>
             <artifactId>client</artifactId>
-            <version>2.8.1</version>
-            <scope>provided</scope>
+            <version>2.7</version>
         </dependency>
         <dependency>
             <groupId>org.parabot</groupId>
             <artifactId>317-api-minified</artifactId>
-            <version>1.21.5</version>
-            <scope>provided</scope>
+            <version>1.21.3</version>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>${buildType.id}</finalName>
+        <finalName>1000191</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -63,35 +56,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>${jdk.version}</source>
-                    <target>${jdk.version}</target>
-                    <excludes>
-                        <exclude>**/aiofighter/**</exclude>
-                    </excludes>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <outputDirectory>${project.build.directory}/final/</outputDirectory>
-                </configuration>
-
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <shadedArtifactAttached>true</shadedArtifactAttached>
-                            <finalName>Shadowrs-Bs-miner-V${buildType.id}</finalName>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -100,44 +67,7 @@
                     <excludes>
                         <exclude>src/main/resources/config.xml</exclude>
                     </excludes>
-                    <outputDirectory>${project.build.directory}/final/</outputDirectory>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.5.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-descriptor</id>
-                        <goals>
-                            <goal>attach-descriptor</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- ENABLE WHEN ADDING TO BDN
-            -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.8</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <configuration>
-                            <target>
-                                <ant antfile="${basedir}/src/main/resources/build.xml">
-                                    <target name="allatori"/>
-                                </ant>
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

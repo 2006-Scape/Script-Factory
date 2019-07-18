@@ -32,7 +32,7 @@
     </dependencies>
 
     <build>
-        <finalName>1000191</finalName>
+        <finalName>1000202</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

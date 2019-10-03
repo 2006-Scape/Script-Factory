@@ -114,6 +114,9 @@ public class ActionExecutor {
                 case "Bank all except IDs":
                     actionHandler.bankAllExcept(action);
                     break;
+                case "Change Tick Speed":
+                    VarsMethods.tickSpeed = action.getParam(0);
+                    break;
                 default:
                     log("Error: Unimplemented action: " + action.getAction());
             }

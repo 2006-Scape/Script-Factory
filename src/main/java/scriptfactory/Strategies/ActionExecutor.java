@@ -56,7 +56,7 @@ public class ActionExecutor {
                 executeLine(line);
             } catch (NumberFormatException notFilledIn) {
                 log("Error on line " + line);
-                log("Make sure you fill in all numeric values properly! Numbers only!");
+                log("Make sure you fill in all numeric values properly! Numbers only! (No spaces!!)");
             }
 
             Time.sleep(VarsMethods.tickSpeed);

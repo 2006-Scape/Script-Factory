@@ -33,7 +33,6 @@ public class Cowkiller extends ScriptFactoryScript {
 
     public static class Walktocows extends ScriptFactoryScript
     {
-
         public Walktocows() {
             super(
                     "Walktocows",
@@ -55,9 +54,9 @@ public class Cowkiller extends ScriptFactoryScript {
             );
         }
     }
+
     public static class Openlummybank extends ScriptFactoryScript
     {
-
         public Openlummybank() {
             super(
                     "Openlummybank",

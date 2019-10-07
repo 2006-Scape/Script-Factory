@@ -2,6 +2,7 @@ package scriptfactory.Actions.Logic;
 
 import org.parabot.environment.api.utils.Filter;
 import org.rev317.min.api.wrappers.GroundItem;
+import org.rev317.min.api.wrappers.Tile;
 import scriptfactory.Actions.Action;
 import org.rev317.min.api.methods.*;
 
@@ -35,6 +36,8 @@ public class LogicHandler {
                 return Players.getMyPlayer().getHealth() < a.getParam(0);
             case "In Combat":
                 return Players.getMyPlayer().isInCombat();
+            case "Within x Tiles of Coords":
+                return new Tile(a.getParam(1), a.getParam(2)).distanceTo() < a.getParam(0);
             default:
                 log("Error: Unimplemented conditional: " + a.getAction());
         }

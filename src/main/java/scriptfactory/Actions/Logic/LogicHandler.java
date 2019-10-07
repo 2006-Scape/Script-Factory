@@ -1,6 +1,8 @@
 package scriptfactory.Actions.Logic;
 
+import org.parabot.core.reflect.RefClass;
 import org.parabot.environment.api.utils.Filter;
+import org.parabot.environment.api.utils.Time;
 import org.rev317.min.api.wrappers.GroundItem;
 import org.rev317.min.api.wrappers.Tile;
 import scriptfactory.Actions.Action;
@@ -38,6 +40,22 @@ public class LogicHandler {
                 return Players.getMyPlayer().isInCombat();
             case "Within x Tiles of Coords":
                 return new Tile(a.getParam(1), a.getParam(2)).distanceTo() < a.getParam(0);
+            case "Player Animation ID":
+                for (int i = 0; i <= a.getParam(1); i+=5) //Allow multiple checks for when the animation is happening
+                {
+                    Time.sleep(5);
+
+                    if (a.getParam(2) == 1){
+                        if (Players.getMyPlayer().getAnimation() != a.getParam(0)) //"Inverse"
+                            return true;
+                    }
+                    else
+                    {
+                        if (Players.getMyPlayer().getAnimation() == a.getParam(0))
+                            return true;
+                    }
+                }
+                return false;
             default:
                 log("Error: Unimplemented conditional: " + a.getAction());
         }

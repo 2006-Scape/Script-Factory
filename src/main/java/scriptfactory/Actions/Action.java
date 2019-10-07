@@ -55,7 +55,6 @@ public class Action {
             array[i] = Integer.parseInt(params.get(i));
         }
         return array;
-        //return params.stream().mapToInt(Integer::parseInt).toArray();
     }
 
     public Action(String action, ArrayList<JTextArea> inputs) {

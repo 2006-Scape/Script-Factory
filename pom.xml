@@ -4,7 +4,7 @@
 
     <groupId>src</groupId>
     <artifactId>script-factory</artifactId>
-    <version>1.5</version>
+    <version>1.9</version>
 
     <properties>
         <jdk.version>1.7</jdk.version>

@@ -6,14 +6,14 @@ import scriptfactory.Actions.Logic.Endif;
 import scriptfactory.Actions.Logic.If;
 import scriptfactory.Actions.Logic.IfNot;
 import scriptfactory.Actions.Logic.LogicHandler;
-import scriptfactory.Actions.SubscriptHandler;
 import scriptfactory.VarsMethods;
 import org.parabot.environment.api.utils.Time;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import static scriptfactory.VarsMethods.log;
+import static scriptfactory.VarsMethods.*;
 
 public class ActionExecutor {
     private ArrayList<Action> actions;
@@ -109,7 +109,8 @@ public class ActionExecutor {
                     actionHandler.walkTo(action);
                     break;
                 case "Run subscript":
-                    SubscriptHandler.runSubscript(action.getParamAsString(0));
+                    insertSubscript(action, actions, action.getParamAsString(0));
+                    lineIndex = --lineIndex == -1 ? actions.size()-1 : lineIndex; //Rerun the last line, which now contains start of subscript
                     break;
                 case "Bank all except IDs":
                     actionHandler.bankAllExcept(action);
@@ -120,6 +121,28 @@ public class ActionExecutor {
                 default:
                     log("Error: Unimplemented action: " + action.getAction());
             }
+        }
+    }
+
+    private void insertSubscript(Action action, ArrayList<Action> actions, String path) {
+        int actionIndex = -1;
+        //Find where to insert the subscript
+        for (int i = 0; i < actions.size(); i++)
+            if (actions.get(i).equals(action))
+                actionIndex = i;
+
+        //Load subscript into array
+        ArrayList<Action> subscriptActions = new ArrayList<>();
+        File subscriptFile = new File(DEFAULT_DIR + FSEP + path);
+        if (subscriptFile.exists())
+            loadscript(subscriptActions, subscriptFile);
+        else
+            loadscript(subscriptActions, new File(DEFAULT_DIR + FSEP + "dependencies" + FSEP + path));
+
+        //Insert subscript array into original script array
+        actions.remove(actionIndex);
+        for (int i = 0; i < subscriptActions.size(); i++) {
+            actions.add(actionIndex + i, subscriptActions.get(i));
         }
     }
 }

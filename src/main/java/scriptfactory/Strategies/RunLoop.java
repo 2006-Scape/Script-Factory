@@ -3,6 +3,7 @@ package scriptfactory.Strategies;
 
 import scriptfactory.Actions.Action;
 import org.parabot.environment.scripts.framework.Strategy;
+import scriptfactory.VarsMethods;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,7 @@ public class RunLoop implements Strategy {
 
     @Override
     public void execute() {
+        VarsMethods.calculateGainedXP();
         actionExecutor.execute();
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <config>
-    <jars basedir="/home/dr_cookie/Projects/ScriptFactory3/target/">
+    <jars basedir="C:/Users/Dan-j/Documents/GitHub/Script-Factory/target/">
         <jar in="1000202.jar" out="/home/ci/jars/1000202.jar"/>
     </jars>
 

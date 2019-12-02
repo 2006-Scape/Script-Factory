@@ -1,10 +1,7 @@
 package scriptfactory;
 
 import org.parabot.core.ui.Logger;
-import org.rev317.min.api.methods.GroundItems;
-import org.rev317.min.api.methods.Items;
-import org.rev317.min.api.methods.Npcs;
-import org.rev317.min.api.methods.SceneObjects;
+import org.rev317.min.api.methods.*;
 import scriptfactory.Actions.Action;
 import scriptfactory.Actions.Logic.Endif;
 import scriptfactory.Actions.Logic.If;
@@ -13,12 +10,15 @@ import scriptfactory.Actions.Logic.IfNot;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class VarsMethods {
     public static int tickSpeed = 1200;
     public static String currentAction = "";
     public static String currentSubscript = "";
+    public static int baseXP = 0;
+    public static int gainedXP = 0;
 
     public final static String DEFAULT_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "Parabot" + System.getProperty("file.separator") + "Script Factory";
     public final static String CACHED_LOC = DEFAULT_DIR + System.getProperty("file.separator") + "Your Previous Script.txt";
@@ -169,5 +169,32 @@ public class VarsMethods {
                 VarsMethods.log("Invalid Object option: " + option);
                 return GroundItems.Option.valueOf(option);
         }
+    }
+
+    public static String formatNumber(int number) {
+        DecimalFormat nf = new DecimalFormat("0.0");
+        double i = number;
+        if (i >= 1000000) {
+            return nf.format((i / 1000000)) + "M";
+        }
+        if (i >= 1000) {
+            return nf.format((i / 1000)) + "K";
+        }
+        return "" + number;
+    }
+
+    public static void calculateBaseXP(){
+        baseXP = 0;
+        for (Skill skill : Skill.values()){
+            baseXP += skill.getExperience();
+        }
+    }
+
+    public static void calculateGainedXP(){
+        gainedXP = 0;
+        for (Skill skill : Skill.values()){
+            gainedXP += skill.getExperience();
+        }
+        gainedXP -= baseXP;
     }
 }

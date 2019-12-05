@@ -40,7 +40,7 @@ public class LogicHandler {
                 return Players.getMyPlayer().isInCombat();
             case "Within x Tiles of Coords":
                 return new Tile(a.getParam(1), a.getParam(2)).distanceTo() < a.getParam(0);
-            case "Player Animation ID":
+            case "Detect Animation ID":
                 for (int i = 0; i <= a.getParam(1); i+=5) //Allow multiple checks for when the animation is happening
                 {
                     Time.sleep(5);

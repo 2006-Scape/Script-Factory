@@ -48,10 +48,9 @@ public class ActionHandler {
 
     public void useItemOn(Action a)
     {
-        Item toUse = Inventory.getItem(parsePint(a.getParamAsString(0)));
-        Menu.interact(toUse, VarsMethods.getItemOption(a.getParamAsString(1)));
-
-        interactWithEntity(new int[]{a.getParam(1)}, "1");
+        Inventory.getItem(a.getParam(0)).interact(Items.Option.USE);
+        SceneObject object = SceneObjects.getClosest(a.getParam(1));
+        Menu.sendAction(a.getParam(2), object.getHash(), object.getLocalRegionX(), object.getLocalRegionY(), object.getId(), 1);
     }
 
     public void type(Action a)

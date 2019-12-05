@@ -36,6 +36,7 @@ public class VarsMethods {
         try (BufferedReader br = new BufferedReader(new FileReader(selectedFile))) {
             String line;
             while ((line = br.readLine()) != null) {
+                line = line.trim();
                 switch (line.split(" ")[0])
                 {
                     case "If":

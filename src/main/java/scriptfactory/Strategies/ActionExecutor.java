@@ -76,7 +76,7 @@ public class ActionExecutor {
         }
         else
         {
-            switch (action.getMethod().replace("-", " "))
+            switch (action.getMethod().replace("-", " ").trim())
             {
                 case "Interact with entity by ID":
                     actionHandler.handleInteractWith(action);

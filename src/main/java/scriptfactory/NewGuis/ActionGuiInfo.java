@@ -19,7 +19,7 @@ public class ActionGuiInfo extends NewStatementGUI {
                 new Descriptions("X-tile coordinate", "Y-tile coordinate", "Time (ms) to wait after walking"),
                 new Descriptions("Item to take (eg. 526 picks up bones)"),
                 new Descriptions("Item in your inventory to use (eg. 951 = \"Silk\")", "Option to select (eg. 1 might be \"eat\")"),
-                new Descriptions("Item in your inventory to use (eg. 999 = \"Bones\")", "Entity to use it on (eg. 999 = altar)<999 isn't actually altar>", "Item option to select (i.e. \"Use\") (cAsE sEnSiTiVe)"),
+                new Descriptions("Item in your inventory to use (eg. 2352 = \"Iron Bar\")", "Entity to use it on (eg. 2783 = Anvil)", "Interact index to use (eg. 62 = Use with)"),
                 new Descriptions("Text to type in (eg. 28)", "Hit enter? (0 for no, 1 for yes)"),
                 new Descriptions("X coordinate to click (eg. 0)", "Y coordinate to click (eg. 600)", "Click type? (0 for left, 1 for right)"),
                 new Descriptions("Amount of time to sleep (ms)"),

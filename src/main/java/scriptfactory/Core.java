@@ -21,7 +21,7 @@ import static scriptfactory.VarsMethods.log;
  * Welcome to AIO AIO - ScriptFactory. Make your own scripts!
  */
 
-@ScriptManifest(author = "Before", name = "Script Factory 1.10", category = Category.OTHER, version = 1.10, description = "Create your own scripts!", servers = "All")
+@ScriptManifest(author = "Before", name = "Script Factory 1.13", category = Category.OTHER, version = 1.13, description = "Create your own scripts!", servers = "All")
 public class Core extends Script implements Paintable {
 
     private ArrayList<Action> actions = new ArrayList<>();
@@ -87,7 +87,7 @@ public class Core extends Script implements Paintable {
             }
             g.drawString("Currently Executing:", 9, 270);
             g.drawString(VarsMethods.currentAction, 9, 290);
-            g.drawString("EXP(P/H): " + VarsMethods.formatNumber((int) VarsMethods.gainedXP) + "(" + VarsMethods.formatNumber(SCRIPT_TIMER.getPerHour((int) VarsMethods.gainedXP)) + ")", 9, 310);
+            g.drawString("EXP(P/H): " + VarsMethods.formatNumber((int) VarsMethods.gainedXP) + "(" + VarsMethods.formatNumber(SCRIPT_TIMER.getPerHour(VarsMethods.gainedXP)) + ")", 9, 310);
             g.drawString("Runtime: " + SCRIPT_TIMER.toString(), 9, 330);
         } catch (Exception e) {
             log("Paint Error");

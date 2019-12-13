@@ -27,6 +27,12 @@ public class VarsMethods {
 
     public static void log(String str)
     {
+        if (str.toLowerCase().contains("error"))
+        {
+            //TODO: Open the logger
+            //Put it in the paint as well
+            currentAction = "ERROR (See Logger)";
+        }
         Logger.addMessage(str, false);
         System.out.println(str);
     }

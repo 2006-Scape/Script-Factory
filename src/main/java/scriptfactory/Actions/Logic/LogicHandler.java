@@ -18,7 +18,7 @@ public class LogicHandler {
         switch (a.getMethod().replaceAll("-", " "))
         {
             case "Item is in Inventory":
-                return Inventory.getCount(a.getParam(0)) >= (a.getParamAsString(1).equals("") ? 0 : a.getParam(1));
+                return Inventory.getCount(a.getParam(0)) >= (a.getParamCount() == 1 ? 1 : a.getParam(1));
             case "Inventory slots used":
                 return Inventory.getCount() >= a.getParam(0);
             case "Item is on Ground":

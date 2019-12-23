@@ -108,6 +108,9 @@ public class ActionExecutor {
                 case "Walk to":
                     actionHandler.walkTo(action);
                     break;
+                case "Walk Efficient":
+                    actionHandler.walkEfficient(action);
+                    break;
                 case "Run subscript":
                     insertSubscript(action, actions, action.getParamAsString(0));
                     lineIndex = --lineIndex == -1 ? actions.size()-1 : lineIndex; //Rerun the last line, which now contains start of subscript

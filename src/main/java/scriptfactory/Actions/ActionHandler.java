@@ -4,6 +4,7 @@ import org.parabot.environment.api.utils.Filter;
 import org.parabot.environment.api.utils.Time;
 import org.parabot.environment.input.Keyboard;
 import org.parabot.environment.input.Mouse;
+import org.parabot.environment.scripts.framework.SleepCondition;
 import org.rev317.min.api.methods.*;
 import org.rev317.min.api.wrappers.*;
 import scriptfactory.VarsMethods;
@@ -95,6 +96,18 @@ public class ActionHandler {
     public void walkTo(Action a) {
         Walking.walkTo(new Tile(a.getParam(0), a.getParam(1)));
         Time.sleep(a.getParam(2));
+    }
+
+    public void walkEfficient(Action a) {
+        final Tile destinationTile = new Tile(a.getParam(0), a.getParam(1));
+        final int withinDistance = a.getParam(2);
+        Walking.walkTo(destinationTile);
+        Time.sleep(new SleepCondition() {
+            @Override
+            public boolean isValid() {
+                return destinationTile.distanceTo() < withinDistance;
+            }
+        }, 50000);
     }
 
     public void handleGroundItemInteract(final Action a) {

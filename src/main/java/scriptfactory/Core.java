@@ -21,7 +21,7 @@ import static scriptfactory.VarsMethods.log;
  * Welcome to AIO AIO - ScriptFactory. Make your own scripts!
  */
 
-@ScriptManifest(author = "Before", name = "Script Factory 1.15", category = Category.OTHER, version = 1.15, description = "Create your own scripts!", servers = "All")
+@ScriptManifest(author = "Before", name = "Script Factory 1.16", category = Category.OTHER, version = 1.16, description = "Create your own scripts!", servers = "All")
 public class Core extends Script implements Paintable {
 
     private ArrayList<Action> actions = new ArrayList<>();

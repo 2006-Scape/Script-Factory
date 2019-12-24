@@ -1,6 +1,9 @@
 package scriptfactory;
 
+import org.parabot.core.Core;
+import org.parabot.core.ui.BotUI;
 import org.parabot.core.ui.Logger;
+import org.rev317.min.accessors.Client;
 import org.rev317.min.api.methods.*;
 import scriptfactory.Actions.Action;
 import scriptfactory.Actions.Logic.Endif;
@@ -27,11 +30,11 @@ public class VarsMethods {
 
     public static void log(String str)
     {
-        if (str.toLowerCase().contains("error"))
+        if (str.toLowerCase().contains("error") || str.toLowerCase().contains("warn"))
         {
-            //TODO: Open the logger
+            Logger.getInstance().setVisible(true);
             //Put it in the paint as well
-            currentAction = "ERROR (See Logger)";
+            currentAction = "ERR/WARN (See log)";
         }
         Logger.addMessage(str, false);
         System.out.println(str);

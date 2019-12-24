@@ -79,7 +79,7 @@ public class ActionExecutor {
             switch (action.getMethod().replace("-", " ").trim())
             {
                 case "Interact with entity by ID":
-                    actionHandler.handleInteractWith(action);
+                    actionHandler.handleInteractWithEntityByID(action);
                     break;
                 case "Interact with entity by location":
                     actionHandler.handleInteractWithByLoc(action);

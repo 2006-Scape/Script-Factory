@@ -19,10 +19,15 @@ public class ActionHandler {
 
     private static String debugString = "";
 
-    public void handleInteractWith(Action a)
+    public void handleInteractWithEntityByID(Action a)
     {
+        if (a.getParamCount() == 0)
+        {
+            log("ERROR: " + a.getAction() + " does not have the required parameters!");
+            return;
+        }
         int[] ids = new int[a.getParamCount() -1];
-        for (int i = 0; i < a.getParamCount() - 1; i++) {
+        for (int i = 0; i < ids.length; i++) {
             ids[i] = a.getParam(i);
         }
         interactWithEntity(ids, a.getParamAsString(a.getParamCount() - 1));

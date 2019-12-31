@@ -7,6 +7,8 @@ import org.parabot.environment.input.Mouse;
 import org.parabot.environment.scripts.framework.SleepCondition;
 import org.rev317.min.api.methods.*;
 import org.rev317.min.api.wrappers.*;
+import org.rev317.min.debug.DSceneObjectsInteractiveObj;
+import org.rev317.min.debug.DSceneObjectsWallDec;
 import scriptfactory.VarsMethods;
 
 import java.awt.event.KeyEvent;
@@ -147,6 +149,10 @@ public class ActionHandler {
     private void interactWithEntity(final int[] id, String option)
     {
         SceneObject candidateObject = SceneObjects.getClosest(id);
+        if (candidateObject == null)
+        {
+            candidateObject = customGetSceneObject(id[0]); //Try harder-  just in case.
+        }
         Npc candidateNpc = Npcs.getClosest(new Filter<Npc>() {
             @Override
             public boolean accept(Npc o) {
@@ -170,8 +176,9 @@ public class ActionHandler {
             }
         });
         SceneObject candidateObject = null;
-        if (sos.length > 0)
+        if (sos.length > 0) {
             candidateObject = sos[0];
+        }
         Npc[] npca = Npcs.getNearest(new Filter<Npc>() {
             @Override
             public boolean accept(Npc o) {

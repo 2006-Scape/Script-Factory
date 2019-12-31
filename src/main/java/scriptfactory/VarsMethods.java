@@ -5,6 +5,8 @@ import org.parabot.core.ui.BotUI;
 import org.parabot.core.ui.Logger;
 import org.rev317.min.accessors.Client;
 import org.rev317.min.api.methods.*;
+import org.rev317.min.api.wrappers.SceneObject;
+import org.rev317.min.api.wrappers.Tile;
 import scriptfactory.Actions.Action;
 import scriptfactory.Actions.Logic.Endif;
 import scriptfactory.Actions.Logic.If;
@@ -206,5 +208,16 @@ public class VarsMethods {
             gainedXP += skill.getExperience();
         }
         gainedXP -= baseXP;
+    }
+
+    public static SceneObject customGetSceneObject(int id) {
+        //Sometimes finds things like trapdoors that aren't otherwise found
+        for (SceneObject object : SceneObjects.getAllSceneObjects()) {
+            if (object != null && object.getId() == id)
+            {
+                return object;
+            }
+        }
+        return null;
     }
 }

@@ -25,7 +25,7 @@ public class VarsMethods {
     public static int baseXP = 0;
     public static int gainedXP = 0;
 
-    public final static String DEFAULT_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "Parabot" + System.getProperty("file.separator") + "Script Factory";
+    public final static String DEFAULT_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "2006Scape" + System.getProperty("file.separator") + "Script Factory";
     public final static String CACHED_LOC = DEFAULT_DIR + System.getProperty("file.separator") + "Your Previous Script.txt";
     public final static String FSEP = System.getProperty("file.separator");
     public final static int MAX_PARAMS = 3;

@@ -1,16 +1,16 @@
-package scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts;
+package scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Thieving;
 
 import org.parabot.environment.scripts.Category;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.ScriptFactoryScript;
 
-public class ArdyCakes extends ScriptFactoryScript {
-    public ArdyCakes() {
+public class ArdyCakesBanking extends ScriptFactoryScript {
+    public ArdyCakesBanking() {
         super(
                 "ArdyCakes (with banking)",
                 "Maui",
                 Category.THIEVING,
                 1.0,
-                "Steals cakes in Ardy",
+                "Steals cakes in Ardy \n Start Next To Ardy Cake Stalls",
                 "If Inventory-slots-used(28)\n" +
                         "IfNot Entity-is-around(494)\n" +
                         "Walk-to(2655,3286,35000)\n" +

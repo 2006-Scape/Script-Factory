@@ -1,8 +1,10 @@
 package scriptfactory.AdvancedGui.ScriptFactorySDN;
 
-import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Cowkiller;
 import org.parabot.core.desc.ScriptDescription;
 import org.parabot.environment.scripts.Category;
+import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.CowkillerBanking;
+import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Deps.Openlummybank;
+import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Deps.Walktocows;
 
 public class ScriptFactoryScript extends ScriptDescription {
 
@@ -23,9 +25,12 @@ public class ScriptFactoryScript extends ScriptDescription {
 
     public static ScriptFactoryScript[] getDescriptions() {
         return new ScriptFactoryScript[]{
-                new Cowkiller(),
-                new Cowkiller.Walktocows(),
-                new Cowkiller.Openlummybank(),
+                //Scripts
+                new CowkillerBanking(),
+                //new ArdyCakes(),
+                //Deps
+                new Walktocows(),
+                new Openlummybank(),
         };
     }
 

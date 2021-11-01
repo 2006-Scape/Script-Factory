@@ -7,7 +7,7 @@ public class Walktocows extends ScriptFactoryScript
     public Walktocows() {
         super(
                 "Walktocows",
-                "Before",
+                "Red Bracket",
                 "Dependency",
                 1.0,
                 "Walks to the cows in lumbridge from anywhere",

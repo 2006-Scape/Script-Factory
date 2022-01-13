@@ -2,9 +2,8 @@ package scriptfactory.AdvancedGui.ScriptFactorySDN;
 
 import org.parabot.core.desc.ScriptDescription;
 import org.parabot.environment.scripts.Category;
-import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.CowkillerBanking;
+import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.CowkillerPrayer;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.CowkillerPower;
-import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.FeatherFarmer;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Deps.Openlummybank;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Deps.Walktocows;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Thieving.ArdyCakesBanking;
@@ -30,12 +29,11 @@ public class ScriptFactoryScript extends ScriptDescription {
         return new ScriptFactoryScript[]{
                 //Scripts
                 new ArdyCakesBanking(),
-                new CowkillerBanking(),
+                new CowkillerPrayer(),
                 new CowkillerPower(),
-               // new FeatherFarmer(),
 
                 //Deps
-                new Openlummybank(),
+                //new Openlummybank(),
                 new Walktocows(),
         };
     }

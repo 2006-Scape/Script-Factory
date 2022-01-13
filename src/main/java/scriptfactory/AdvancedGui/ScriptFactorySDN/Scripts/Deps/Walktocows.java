@@ -10,9 +10,8 @@ public class Walktocows extends ScriptFactoryScript
                 "Red Bracket",
                 "Dependency",
                 1.0,
-                "Walks to the cows in lumbridge from anywhere",
+                "Walks to the cows in lumbridge from the home point",
                 "IfNot Entity-is-around(81,397,1767,1768)\n" +
-                        "Type(::stuck,1)\n" +
                         "Sleep(1500)\n" +
                         "Walk-to(3241,3226,14000)\n" +
                         "Walk-to(3259,3233,14000)\n" +

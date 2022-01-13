@@ -10,7 +10,7 @@ public class CowkillerPower extends ScriptFactoryScript {
                 "Dark98 & Red Bracket",
                 Category.COMBAT,
                 1.0,
-                "Kills Cows In Lumbridge  \n Can Be Started Anywhere",
+                "Kills Cows In Lumbridge \n Start In CowField Or Lummy Castle Courtyard",
 
                 "IfNot In-Combat()\n" +
                         "If Entity-is-around(81,397,1767,1768)\n" +

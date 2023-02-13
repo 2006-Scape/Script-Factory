@@ -2,7 +2,7 @@ package scriptfactory.AdvancedGui.ScriptFactorySDN;
 
 import org.parabot.core.desc.ScriptDescription;
 import org.parabot.environment.scripts.Category;
-import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.CowkillerBanking;
+import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.CowkillerBones;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.CowkillerPower;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Deps.Walktocows;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Thieving.ArdyCakesBanking;
@@ -27,8 +27,8 @@ public class ScriptFactoryScript extends ScriptDescription {
     public static ScriptFactoryScript[] getDescriptions() {
         return new ScriptFactoryScript[]{
                 //Scripts
-                new ArdyCakesBanking(),
-                new CowkillerBanking(),
+                new ArdyCakesBanking(), //TODO Untested?
+                new CowkillerBones(),
                 new CowkillerPower(),
 
                 //Deps

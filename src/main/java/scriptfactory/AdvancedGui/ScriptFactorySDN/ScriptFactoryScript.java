@@ -4,6 +4,7 @@ import org.parabot.core.desc.ScriptDescription;
 import org.parabot.environment.scripts.Category;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.CowkillerBones;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.CowkillerPower;
+import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.FeatherFarmerBones;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Deps.Walktocows;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Thieving.ArdyCakesBanking;
 
@@ -30,6 +31,7 @@ public class ScriptFactoryScript extends ScriptDescription {
                 new ArdyCakesBanking(), //TODO Untested?
                 new CowkillerBones(),
                 new CowkillerPower(),
+                new FeatherFarmerBones(),
 
                 //Deps
                 //new Openlummybank(),

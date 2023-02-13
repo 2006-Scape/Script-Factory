@@ -7,6 +7,7 @@ import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.CowkillerPower;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Combat.FeatherFarmerBones;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Deps.Walktocows;
 import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Thieving.ArdyCakesBanking;
+import scriptfactory.AdvancedGui.ScriptFactorySDN.Scripts.Thieving.ManWomanPickpocket;
 
 public class ScriptFactoryScript extends ScriptDescription {
 
@@ -32,6 +33,7 @@ public class ScriptFactoryScript extends ScriptDescription {
                 new CowkillerBones(),
                 new CowkillerPower(),
                 new FeatherFarmerBones(),
+                new ManWomanPickpocket(),
 
                 //Deps
                 //new Openlummybank(),

@@ -10,7 +10,7 @@ public class CowkillerPower extends ScriptFactoryScript {
                 "Dark98",
                 Category.COMBAT,
                 1.0,
-                "Kills Cows In Lumbridge  \n Start In Lummy Cow Field.",
+                "Kills Cows \n Start Near Cows.",
 
                 "IfNot In-Combat()\n" +
                         "If Entity-is-around(81,397,1767,1768)\n" +

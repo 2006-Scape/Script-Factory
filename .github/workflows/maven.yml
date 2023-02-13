@@ -1,0 +1,58 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.g
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches:
+    - master
+    - development
+  pull_request:
+    branches:
+    - master
+    - development
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'zulu'
+        cache: maven
+    - name: Build with Maven
+      run: |
+        mvn -B package --file pom.xml
+        mkdir -p ~/artifacts
+        cp target/script-factory-1.9.jar ~/artifacts/
+    - name: Publish build to GH Actions
+      uses: actions/upload-artifact@v2
+      with:
+          path: ~/artifacts/*
+          name: Build
+    - name: Create Version
+      id: get_version
+      run: |
+        echo "VERSION=v$(date +%s)" >> $GITHUB_OUTPUT #&& echo "::set-output name=VERSION::${verson}"
+    - name: Upload Pre-Release
+      id: create_release
+      uses: softprops/action-gh-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+      with:
+        tag_name: ${{ steps.get_version.outputs.VERSION }} 
+        name: ${{ github.sha }}
+        prerelease: true
+        files: |
+            target/script-factory-1.9.jar
